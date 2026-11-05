@@ -15,8 +15,10 @@ I'm looking for internships in **LLM inference optimization and AI systems**, re
 
 ### In progress
 
-- **Megatron-LM:** Activation offloading for GDN recurrence ([#7908](https://github.com/NVIDIA/Megatron-LM/pull/7908)), plus work on GDN2 and CUDA Graph support ([#8308](https://github.com/NVIDIA/Megatron-LM/pull/8308)).
-- **SGLang-Omni:** PersonaPlex streaming and startup improvements, including [incremental history](https://github.com/sgl-project/sglang-omni/pull/3103), [warmup](https://github.com/sgl-project/sglang-omni/pull/3104), and [device-resident audio codes](https://github.com/sgl-project/sglang-omni/pull/3126).
+- **verl-omni:** Streaming named-reward scoring ([#730](https://github.com/verl-project/verl-omni/pull/730)) and two-rank native PickScore FSDP replicas ([#855](https://github.com/verl-project/verl-omni/pull/855), draft).
+
+- **Megatron-LM:** Activation offloading for GDN recurrence ([#7908](https://github.com/NVIDIA/Megatron-LM/pull/7908)), microbatch regression coverage ([#8243](https://github.com/NVIDIA/Megatron-LM/pull/8243)), and context-parallel scheduling metrics ([#8431](https://github.com/NVIDIA/Megatron-LM/pull/8431)).
+- **SGLang-Omni:** PersonaPlex streaming and startup improvements, including [incremental history](https://github.com/sgl-project/sglang-omni/pull/3103) and [session warmup](https://github.com/sgl-project/sglang-omni/pull/3104).
 - **vLLM:** Multimodal prefix-cache boundary handling for hybrid Mamba models ([#56818](https://github.com/vllm-project/vllm/pull/56818)).
 - **Mooncake:** Encoder–Prefill–Decode disaggregation and reusable agent state ([#2836](https://github.com/kvcache-ai/Mooncake/pull/2836)).
 
