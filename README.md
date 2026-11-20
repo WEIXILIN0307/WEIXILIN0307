@@ -10,6 +10,8 @@ I'm looking for internships in **LLM inference optimization and AI systems**, re
 
 ### Merged
 
+- **vLLM-Omni:** Fixed a Qwen3-Omni Code2Wav dtype mismatch by preserving the embedding dtype after the batch-invariant mean, with regression coverage for BF16, FP16, and FP32 ([#8327](https://github.com/vllm-project/vllm-omni/pull/8327)).
+- **SGLang-Omni:** Made PersonaPlex caller-history updates incremental on CPU and GPU, avoiding repeated full-history copies while preserving history for re-prefill ([#3103](https://github.com/sgl-project/sglang-omni/pull/3103)).
 - **verl-omni:** Added opt-in FSDP2 sharding for frozen PickScore reward models across two GPUs, with lifecycle and failure cleanup handling ([#855](https://github.com/verl-project/verl-omni/pull/855)). Initial support targets single-node synchronous diffusion training.
 - **UniRL:** Made WAN2.1 denoising noise reproducible by sample identity across rollout microbatches ([#652](https://github.com/Tencent-Hunyuan/UniRL/pull/652)).
 - **verl-omni:** Added CPU placement for native reward models ([#694](https://github.com/verl-project/verl-omni/pull/694)) and migrated the SD3.5 OCR recipe to named rewards ([#695](https://github.com/verl-project/verl-omni/pull/695)).
@@ -19,7 +21,7 @@ I'm looking for internships in **LLM inference optimization and AI systems**, re
 
 - **verl-omni:** Streaming named-reward scoring ([#730](https://github.com/verl-project/verl-omni/pull/730)) and colocated asynchronous diffusion training, with shared-GPU scheduling and recovery ([#742](https://github.com/verl-project/verl-omni/pull/742)).
 - **Megatron-LM:** Activation offloading for GDN recurrence ([#7908](https://github.com/NVIDIA/Megatron-LM/pull/7908)), microbatch regression coverage ([#8243](https://github.com/NVIDIA/Megatron-LM/pull/8243)), and context-parallel scheduling metrics ([#8431](https://github.com/NVIDIA/Megatron-LM/pull/8431)).
-- **SGLang-Omni:** PersonaPlex streaming and startup improvements, including [incremental history](https://github.com/sgl-project/sglang-omni/pull/3103) and [session warmup](https://github.com/sgl-project/sglang-omni/pull/3104).
+- **SGLang-Omni:** PersonaPlex session LM warmup before server readiness ([#3104](https://github.com/sgl-project/sglang-omni/pull/3104)).
 - **vLLM:** Multimodal prefix-cache boundary handling for hybrid Mamba models ([#56818](https://github.com/vllm-project/vllm/pull/56818)).
 - **Mooncake:** Encoder–Prefill–Decode disaggregation and reusable agent state ([#2836](https://github.com/kvcache-ai/Mooncake/pull/2836)).
 
