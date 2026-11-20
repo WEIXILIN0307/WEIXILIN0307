@@ -1,6 +1,6 @@
 # Hi, I'm WEIXI LIN
 
-I'm a master's student in Computer Technology at Northwestern Polytechnical University (NWPU). I work on efficient LLM inference and training systems, with a focus on runtime performance, GPU/NPU kernels, and KV cache management.
+I'm a master's student in Computer Technology at Northwestern Polytechnical University (NWPU). I work on AI infrastructure for distributed training, efficient inference, and reinforcement learning (RL) post-training. My work includes GPU/NPU kernels, KV cache management, and rollout and reward systems.
 
 I'm looking for internships in **LLM inference optimization and AI systems**, remote or on-site.
 
