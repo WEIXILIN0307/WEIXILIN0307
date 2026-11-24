@@ -1,37 +1,37 @@
-# Hi, I'm WEIXI LIN
+# Hi, I'm Weixi Lin
 
-I'm a master's student in Computer Technology at Northwestern Polytechnical University (NWPU). I work on AI infrastructure for distributed training, efficient inference, and reinforcement learning (RL) post-training. My work includes GPU/NPU kernels, KV cache management, and rollout and reward systems.
+I'm a computer technology master's student at Northwestern Polytechnical University (NWPU). I work on distributed training, efficient inference, and reinforcement learning post-training. I'm especially interested in how models share GPU memory and how to keep training and inference running reliably.
 
-**Active Committer at [verl-omni](https://github.com/verl-project/verl-omni/blob/main/docs/community/governance.md#active-committers)** · Trainer and algorithm core · Rollout and agent loop · Reward system
+I'm a [verl-omni committer](https://github.com/verl-project/verl-omni/blob/main/docs/community/governance.md#active-committers), working on the trainer, rollout and agent loop, and reward system. I'm open to internships in LLM inference and AI systems, remote or on-site. [Email me](mailto:weixilin307@gmail.com).
 
-I'm looking for internships in **LLM inference optimization and AI systems**, remote or on-site.
+## Open source
 
-[Email](mailto:weixilin307@gmail.com) · [GitHub](https://github.com/WEIXILIN0307)
+### What I've shipped
 
-## Open-source contributions
+- **verl-omni:** I added opt-in [FSDP2 sharding for PickScore](https://github.com/verl-project/verl-omni/pull/855) on two GPUs, [CPU placement for native rewards](https://github.com/verl-project/verl-omni/pull/694), and [named rewards for the SD3.5 OCR recipe](https://github.com/verl-project/verl-omni/pull/695).
+- **vLLM-Omni and SGLang-Omni:** I fixed a [Qwen3-Omni audio dtype issue](https://github.com/vllm-project/vllm-omni/pull/8327), added [remote SeedVR2 restoration in ComfyUI](https://github.com/vllm-project/vllm-omni/pull/8505), and made [PersonaPlex update caller history incrementally](https://github.com/sgl-project/sglang-omni/pull/3103).
+- **UniRL and llm-d-async:** I made [Wan2.1 denoising noise reproducible across rollout microbatches](https://github.com/Tencent-Hunyuan/UniRL/pull/652) and updated the [Kubernetes inference gateway dependency and tests](https://github.com/llm-d/llm-d-async/pull/558).
 
-### Merged
+### What I'm working on
 
-- **verl-omni:** Added opt-in FSDP2 sharding for frozen PickScore reward models across two GPUs, with lifecycle and failure cleanup handling ([#855](https://github.com/verl-project/verl-omni/pull/855)). Initial support targets single-node synchronous diffusion training.
-- **vLLM-Omni:** Fixed a Qwen3-Omni Code2Wav dtype mismatch by preserving the embedding dtype after the batch-invariant mean, with regression coverage for BF16, FP16, and FP32 ([#8327](https://github.com/vllm-project/vllm-omni/pull/8327)).
-- **SGLang-Omni:** Made PersonaPlex caller-history updates incremental on CPU and GPU, avoiding repeated full-history copies while preserving history for re-prefill ([#3103](https://github.com/sgl-project/sglang-omni/pull/3103)).
-- **UniRL:** Made WAN2.1 denoising noise reproducible by sample identity across rollout microbatches ([#652](https://github.com/Tencent-Hunyuan/UniRL/pull/652)).
-- **verl-omni:** Added CPU placement for native reward models ([#694](https://github.com/verl-project/verl-omni/pull/694)) and migrated the SD3.5 OCR recipe to named rewards ([#695](https://github.com/verl-project/verl-omni/pull/695)).
-- **vLLM-Omni:** Added remote SeedVR2 video restoration for ComfyUI ([#8505](https://github.com/vllm-project/vllm-omni/pull/8505)).
+- **Multimodal RL:** Making [diffusion rollout and training take turns on shared GPUs](https://github.com/verl-project/verl-omni/pull/742) in verl-omni, and exploring [how to resume interrupted denoising under the original policy](https://github.com/vllm-project/vllm-omni/issues/10529) in vLLM-Omni.
+- **Inference systems:** Working on [multimodal prefix reuse](https://github.com/vllm-project/vllm/pull/56818) in vLLM and [prefill–decode separation](https://github.com/sgl-project/sglang-omni/pull/4388) in SGLang-Omni.
+- **Training efficiency:** Working on [GDN activation offloading](https://github.com/NVIDIA/Megatron-LM/pull/7908) and [partial CUDA Graph capture with FSDP v2](https://github.com/NVIDIA/Megatron-LM/pull/9112) in Megatron-LM.
 
-- **llm-d-async:** Upgraded the Kubernetes Gateway API Inference Extension to v1.6.2, aligned Kubernetes dependencies, and updated integration and end-to-end tests ([#558](https://github.com/llm-d/llm-d-async/pull/558)).
+<details>
+<summary>More ongoing work and related PRs</summary>
 
-### In progress
+- **verl-omni:** [Per-sample reward streaming](https://github.com/verl-project/verl-omni/pull/730), [audio inputs for shared reward managers](https://github.com/verl-project/verl-omni/pull/920), and [safe rollout recovery after validation scoring](https://github.com/verl-project/verl-omni/pull/929).
+- **vLLM-Omni:** [Configured pipeline transitions](https://github.com/vllm-project/vllm-omni/pull/8745), [SD3 step execution](https://github.com/vllm-project/vllm-omni/pull/10864), [LoRA export and restore](https://github.com/vllm-project/vllm-omni/pull/10938), and [denoising suspension and recovery](https://github.com/vllm-project/vllm-omni/pull/10942).
+- **SGLang-Omni:** [PersonaPlex warmup](https://github.com/sgl-project/sglang-omni/pull/3104), [bounded audio batching](https://github.com/sgl-project/sglang-omni/pull/3591), [decode KV reservation rollback](https://github.com/sgl-project/sglang-omni/pull/4384), and [KV layout validation](https://github.com/sgl-project/sglang-omni/pull/4392).
+- **Megatron-LM and Transformer Engine:** [Activation offload tests](https://github.com/NVIDIA/Megatron-LM/pull/8243), [DCP scheduling metrics](https://github.com/NVIDIA/Megatron-LM/pull/8431), and [CUDA Graph warmup cleanup](https://github.com/NVIDIA/TransformerEngine/pull/3862).
+- **NVIDIA Model Optimizer and Megatron-LM:** [EAGLE3 teacher-feature streaming proposal](https://github.com/NVIDIA/Model-Optimizer/issues/3474) and draft implementations in [Model Optimizer](https://github.com/NVIDIA/Model-Optimizer/pull/3473) and [Megatron-LM](https://github.com/NVIDIA/Megatron-LM/pull/9550).
+- **Mooncake and llm-d:** [Encoder–Prefill–Decode disaggregation and agent state reuse](https://github.com/kvcache-ai/Mooncake/pull/2836) and a [shared latency feature schema proposal](https://github.com/llm-d/llm-d-router/issues/4218).
+- **UniRL and NVIDIA recsys-examples:** [Wan2.1 on-policy distillation recipe](https://github.com/Tencent-Hunyuan/UniRL/pull/651) and [DynamicEmb row-index resolution proposal](https://github.com/NVIDIA/recsys-examples/issues/552) ([draft implementation](https://github.com/NVIDIA/recsys-examples/pull/551)).
 
-- **verl-omni:** Shared-GPU asynchronous diffusion rollout ([#742](https://github.com/verl-project/verl-omni/pull/742)); per-sample named reward streaming ([#730](https://github.com/verl-project/verl-omni/pull/730)), audio inputs for shared reward managers ([#920](https://github.com/verl-project/verl-omni/pull/920)), and safe rollout restoration after synchronous validation scoring ([#929](https://github.com/verl-project/verl-omni/pull/929)).
-- **Megatron-LM / Transformer Engine:** GDN recurrence activation offloading ([#7908](https://github.com/NVIDIA/Megatron-LM/pull/7908)) and regression coverage ([#8243](https://github.com/NVIDIA/Megatron-LM/pull/8243)); DCP scheduling metrics ([#8431](https://github.com/NVIDIA/Megatron-LM/pull/8431)); draft work on partial CUDA Graph capture with FSDP v2 and MoE ([#9112](https://github.com/NVIDIA/Megatron-LM/pull/9112)) and warmup failure cleanup ([TE #3862](https://github.com/NVIDIA/TransformerEngine/pull/3862)).
-- **NVIDIA Model Optimizer / Megatron-LM:** Proposed streaming vLLM teacher features into Megatron-LM for EAGLE3 fine-tuning ([RFC #3474](https://github.com/NVIDIA/Model-Optimizer/issues/3474); draft PRs [#3473](https://github.com/NVIDIA/Model-Optimizer/pull/3473) and [#9550](https://github.com/NVIDIA/Megatron-LM/pull/9550)).
-- **vLLM / vLLM-Omni:** Multimodal prefix-cache boundary handling for sibling requests on hybrid Mamba models ([vLLM #56818](https://github.com/vllm-project/vllm/pull/56818)); configurable pipeline stage transitions ([Omni #8745](https://github.com/vllm-project/vllm-omni/pull/8745)); same-policy diffusion request recovery ([RFC #10529](https://github.com/vllm-project/vllm-omni/issues/10529), [SD3 step execution #10864](https://github.com/vllm-project/vllm-omni/pull/10864), [LoRA state #10938](https://github.com/vllm-project/vllm-omni/pull/10938), [suspend/restore draft #10942](https://github.com/vllm-project/vllm-omni/pull/10942)).
-- **SGLang-Omni:** PersonaPlex session LM warmup before server readiness ([#3104](https://github.com/sgl-project/sglang-omni/pull/3104)) and bounded batching of queued session audio ([#3591](https://github.com/sgl-project/sglang-omni/pull/3591)); Prefill–Decode disaggregation, including KV reservation rollback, layout validation, and DFlash target/draft KV transfer ([#4384](https://github.com/sgl-project/sglang-omni/pull/4384), [#4392](https://github.com/sgl-project/sglang-omni/pull/4392), [#4388](https://github.com/sgl-project/sglang-omni/pull/4388)).
-- **Mooncake / llm-d:** Encoder–Prefill–Decode disaggregation and reusable agent state ([Mooncake #2836](https://github.com/kvcache-ai/Mooncake/pull/2836)); proposed a shared latency feature schema across llm-d's router and predictor ([llm-d RFC #4218](https://github.com/llm-d/llm-d-router/issues/4218)).
-- **UniRL / NVIDIA recsys-examples:** Wan2.1 on-policy distillation recipe ([UniRL #651](https://github.com/Tencent-Hunyuan/UniRL/pull/651)); proposed receiver-side DynamicEmb row-index resolution during input distribution ([RFC #552](https://github.com/NVIDIA/recsys-examples/issues/552), [draft prototype #551](https://github.com/NVIDIA/recsys-examples/pull/551)).
+</details>
 
-[View my upstream pull requests](https://github.com/search?q=author%3AWEIXILIN0307+is%3Apr+-user%3AWEIXILIN0307+is%3Apublic&type=pullrequests)
+[All public upstream pull requests](https://github.com/search?q=author%3AWEIXILIN0307+is%3Apr+-user%3AWEIXILIN0307+is%3Apublic&type=pullrequests)
 
 ## Selected projects
 
@@ -39,13 +39,7 @@ I'm looking for internships in **LLM inference optimization and AI systems**, re
 - **[Efficient VLM inference](https://github.com/WEIXILIN0307/AICASGC):** Optimized Qwen3-VL-2B with KV cache reuse, projection fusion, Triton kernels, and CUDA Graphs.
 - **[MetaX C500 kernels](https://github.com/WEIXILIN0307/TileOPs-Metax/tree/feat/quant-per-channel-cast-fused):** Built and tuned fused quantization kernels with TileLang, profiling, and correctness tests.
 
-## Interests and tools
-
-- LLM inference, multimodal serving, KV and prefix caching
-- Distributed training, activation offloading, and runtime scheduling
-- Quantization, GPU/NPU kernels, profiling, and performance analysis
-
-Python · PyTorch · CUDA · Triton · TileLang · CANN / AscendC · vLLM · llama.cpp
+I mostly work with Python, PyTorch, CUDA, Triton, TileLang, and CANN / AscendC.
 
 ## Competitions and awards
 
