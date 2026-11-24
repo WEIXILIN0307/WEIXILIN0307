@@ -20,7 +20,6 @@ I'm looking for internships in **LLM inference optimization and AI systems**, re
 - **vLLM-Omni:** Added remote SeedVR2 video restoration for ComfyUI ([#8505](https://github.com/vllm-project/vllm-omni/pull/8505)).
 
 - **llm-d-async:** Upgraded the Kubernetes Gateway API Inference Extension to v1.6.2, aligned Kubernetes dependencies, and updated integration and end-to-end tests ([#558](https://github.com/llm-d/llm-d-async/pull/558)).
-- **MindSpore Contrib:** Ported research implementations for shallow RNN time-series classification ([#234](https://github.com/mindspore-ai/contrib/pull/234)), hierarchical memory for RL agents ([#256](https://github.com/mindspore-ai/contrib/pull/256)), Fisher-information analysis of adversarial examples ([#259](https://github.com/mindspore-ai/contrib/pull/259)), and single-image facial animation ([#260](https://github.com/mindspore-ai/contrib/pull/260)).
 
 ### In progress
 
